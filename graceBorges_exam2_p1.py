@@ -5,7 +5,6 @@ def isValidPassword(password):
     if len(password) <= 7:
         isLong = False
     else:
-        #print('Password is not long enough')
         isLong = True
 
     for i in password:
@@ -13,7 +12,6 @@ def isValidPassword(password):
             hasDigit = True
             break
         else:
-            #print('Password does not have a number')
             hasDigit = False
 
     for i in password:
@@ -21,7 +19,6 @@ def isValidPassword(password):
             hasLower = True
             break
         else:
-            #print('Password does not have a lower case')
             hasLower = False
 
     for i in password:
@@ -29,34 +26,34 @@ def isValidPassword(password):
             hasUpper = True
             break
         else:
-            #print('Password does not have an upper case')
             hasUpper = False
 
     if hasDigit and hasUpper and hasLower and isLong:
         print('The password will work')
         return True
-
+    elif isLong == False:
+        print('The password needs to be at least 8 characters')
     else:
         print('The password did not have required properties')
         return False
 
 def main():
+#    password = 1
+#    password2 = 1
 
-    password = input('Please enter password:')
+#    while password != password2:
+        password = input('Please enter password:')
+        password = str(password)
 
-    password = str(password)
+        password2 = input('Please enter password again: ')
+        password2 = str(password2)
 
-    password2 = input('Please enter password again: ')
-
-    print(password2)
-   
-    print(password)
-
-    if password == password2:
-        isValidPassword(password)
-    else:
-        print('The two passwords do not match, please try again')
-        return False
+        if password == password2:
+            isValidPassword(password)
+#            break
+        else:
+            print('The two passwords do not match, please try again')
+            
     
 
 
